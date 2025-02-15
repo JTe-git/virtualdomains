@@ -251,7 +251,9 @@ class PlgSystemVirtualdomains extends CMSPlugin
 
 		/** @var Joomla\CMS\Application\SiteApplication $app */
 	    $app = Factory::getApplication();
-		$app->setTemplate($curDomain->template);
+		if ($curDomain->template) {
+		   $app->setTemplate($curDomain->template);
+		}
 
 	    $menu = $app->getMenu('site', array());
 		$menuItem = $menu->getItem(( int ) $curDomain->menuid );
