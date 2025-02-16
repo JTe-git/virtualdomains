@@ -276,7 +276,7 @@ class PlgSystemVirtualdomains extends CMSPlugin
 
 		// may be we are routed to a component by a form
 		$option = $app->input->get('option');
-		if($option && ($menuItem->component != $option )) {
+		if($option && $menuItem && ($menuItem->component != $option )) {
 			$curDomain->isHome = false;
 		}
 
