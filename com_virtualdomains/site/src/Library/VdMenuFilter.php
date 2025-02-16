@@ -44,7 +44,7 @@ class VdMenuFilter extends AbstractMenu {
 		}
 
 		//Check each item
-		foreach($menu->_items  as $item) {
+		foreach($menu->items  as $item) {
 			//Translate if translation available
 			if ($item->home) {
 				if(isset($translatations->$lang) && ($menutranslation = trim($translatations->$lang))) {
