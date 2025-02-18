@@ -35,6 +35,7 @@ class VdComponentsField extends ListField
 	 */
 	public $type = 'vdcomponents';
 
+	private $_exclude = null;
 	
 	/**
 	 * Method to get the field input markup.

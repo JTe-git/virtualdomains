@@ -251,7 +251,9 @@ class PlgSystemVirtualdomains extends CMSPlugin
 
 		/** @var Joomla\CMS\Application\SiteApplication $app */
 	    $app = Factory::getApplication();
-		$app->setTemplate($curDomain->template);
+		if ($curDomain->template) {
+		   $app->setTemplate($curDomain->template);
+		}
 
 	    $menu = $app->getMenu('site', array());
 		$menuItem = $menu->getItem(( int ) $curDomain->menuid );
@@ -274,7 +276,7 @@ class PlgSystemVirtualdomains extends CMSPlugin
 
 		// may be we are routed to a component by a form
 		$option = $app->input->get('option');
-		if($option && ($menuItem->component != $option )) {
+		if($option && $menuItem && ($menuItem->component != $option )) {
 			$curDomain->isHome = false;
 		}
 
